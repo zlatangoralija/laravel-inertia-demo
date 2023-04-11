@@ -31,3 +31,5 @@ Route::get('/settings', function () {
 Route::post('/logout', function () {
     dd('log out', request('foo'));
 });
+
+//Resume: Episode 9, layout files.
