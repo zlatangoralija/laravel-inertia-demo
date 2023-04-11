@@ -4,17 +4,8 @@
     </Layout>
 </template>
 
-<script>
+<script setup>
 import Layout from "../Shared/Layout.vue";
-
-export default {
-    props: {
-    },
-
-    components: {
-        Layout,
-    }
-}
 </script>
 
 <style scoped>
