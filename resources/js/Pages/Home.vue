@@ -1,20 +1,22 @@
 <template>
-    <Layout>
-        <h1 class="text-3xl">Home</h1>
+    <h1 class="text-3xl">Home</h1>
 
-        <div>
-            <p>The time is {{time}}</p>
-            <Link href="/" class="text-blue-500" preserve-scroll>Refresh</Link>
-        </div>
-    </Layout>
+    <div>
+        <p>The time is {{time}}</p>
+        <Link href="/" class="text-blue-500" preserve-scroll>Refresh</Link>
+    </div>
 </template>
 
-<script setup>
+<script>
 import Layout from "../Shared/Layout.vue";
 
-defineProps({
-    time: String,
-})
+export default {
+    props: {
+        time: String,
+    },
+
+    layout: Layout
+}
 </script>
 
 <style scoped>
