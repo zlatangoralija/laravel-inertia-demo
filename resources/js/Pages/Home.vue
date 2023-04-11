@@ -1,6 +1,10 @@
 <template>
-    <h1 class="text-3xl">Home</h1>
+    <Head>
+        <title>Home</title>
+        <meta type="description" content="Home description" head-key="description">
+    </Head>
 
+    <h1 class="text-3xl">Home</h1>
     <div>
         <p>The time is {{time}}</p>
         <Link href="/" class="text-blue-500" preserve-scroll>Refresh</Link>

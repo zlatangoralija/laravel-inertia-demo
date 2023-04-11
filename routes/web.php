@@ -32,4 +32,4 @@ Route::post('/logout', function () {
     dd('log out', request('foo'));
 });
 
-//Resume: Episode 9, layout files.
+//Resume: Episode 15, dynamic head and meta.
