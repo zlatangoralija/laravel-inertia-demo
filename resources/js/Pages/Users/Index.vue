@@ -7,7 +7,10 @@
 
     <section class="container px-4 mx-auto">
         <div class="flex justify-between mb-3">
-            <h1 class="text-3xl">Users</h1>
+            <div class="flex items-center">
+                <h1 class="text-3xl mr-3">Users</h1>
+                <a href="/users/create" class="text-blue-500 text-sm">New user</a>
+            </div>
             <input v-model="search" type="text" placeholder="Search.." class="border px-2 rounded-lg" name="term">
         </div>
 

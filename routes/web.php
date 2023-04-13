@@ -43,7 +43,13 @@ Route::get('/users/create', function () {
 });
 
 Route::post('/users/', function (Request $request) {
-    $user = User::create($request->input());
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required'
+    ]);
+
+    $user = User::create($validated);
 
     return redirect('/users');
 });
@@ -56,4 +62,4 @@ Route::post('/logout', function () {
     dd('log out', request('foo'));
 });
 
-//Resume: Episode 18, filtering
+//Resume: Episode 19 - 2:08, validation messages
