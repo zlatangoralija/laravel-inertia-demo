@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -20,12 +21,19 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/users', function () {
+Route::get('/users', function (Request $request) {
     return Inertia::render('Users', [
-        'users' => \App\Models\User::paginate(15)->through(fn ($user) => [
-            'id' => $user->id,
-            'name' => $user->name,
-        ])
+        'users' => \App\Models\User::query()
+            ->when($request->input('search'), function ($query) use ($request){
+                $query->where('name', 'LIKE', '%' . $request->input('search') . '%');
+            })
+            ->paginate(15)
+            ->withQueryString()
+            ->through(fn ($user) => [
+                'id' => $user->id,
+                'name' => $user->name,
+            ]),
+        'filters' => $request->only('search')
     ]);
 });
 
@@ -37,4 +45,4 @@ Route::post('/logout', function () {
     dd('log out', request('foo'));
 });
 
-//Resume: Episode 15, dynamic head and meta.
+//Resume: Episode 18, filtering

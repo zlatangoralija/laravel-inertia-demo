@@ -4,9 +4,13 @@
         <meta type="description" content="Users description" head-key="description">
     </Head>
 
-    <h1 class="text-3xl">Users</h1>
 
     <section class="container px-4 mx-auto">
+        <div class="flex justify-between mb-3">
+            <h1 class="text-3xl">Users</h1>
+            <input v-model="search" type="text" placeholder="Search.." class="border px-2 rounded-lg" name="term">
+        </div>
+
         <div class="flex flex-col">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -65,22 +69,28 @@
     </section>
 </template>
 
-<script>
+<script setup>
 
-import Layout from "../Shared/Layout.vue";
+import {defineProps, ref, watch} from "vue"
 import Pagination from "../Shared/Pagination.vue";
+import { router } from "@inertiajs/vue3";
 
-export default {
-    props: {
-        users: Object,
-    },
+let props = defineProps({
+    users: Object,
+    filters: Object
+})
 
-    components: {
-        Pagination,
-    },
+let search = ref(props.filters.search);
 
-    layout: Layout
-}
+watch(search, value => {
+    router.get('/users', {
+        search: value
+    }, {
+        preserveState: true,
+        replace: true,
+    })
+})
+
 </script>
 
 <style scoped>

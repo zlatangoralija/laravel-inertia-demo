@@ -4,19 +4,17 @@
         <meta type="description" content="Settings description" head-key="description">
     </Head>
 
-    <h1 class="text-3xl">Settings</h1>
+    <section class="container px-4 mx-auto">
+        <div class="flex justify-between mb-3">
+            <h1 class="text-3xl">Settings</h1>
+        </div>
+
+        <p>Hi settings</p>
+    </section>
 </template>
 
-<script>
-import Layout from "../Shared/Layout.vue";
+<script setup>
 
-
-export default {
-    props: {
-    },
-
-    layout: Layout
-}
 </script>
 
 <style scoped>
