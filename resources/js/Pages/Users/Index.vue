@@ -72,7 +72,7 @@
 <script setup>
 
 import {defineProps, ref, watch} from "vue"
-import Pagination from "../Shared/Pagination.vue";
+import Pagination from "../../Shared/Pagination.vue";
 import { router } from "@inertiajs/vue3";
 
 let props = defineProps({

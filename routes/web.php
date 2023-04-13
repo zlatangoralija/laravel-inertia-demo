@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function (Request $request) {
-    return Inertia::render('Users', [
+    return Inertia::render('Users/Index', [
         'users' => \App\Models\User::query()
             ->when($request->input('search'), function ($query) use ($request){
                 $query->where('name', 'LIKE', '%' . $request->input('search') . '%');
@@ -35,6 +36,16 @@ Route::get('/users', function (Request $request) {
             ]),
         'filters' => $request->only('search')
     ]);
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('Users/Create');
+});
+
+Route::post('/users/', function (Request $request) {
+    $user = User::create($request->input());
+
+    return redirect('/users');
 });
 
 Route::get('/settings', function () {
