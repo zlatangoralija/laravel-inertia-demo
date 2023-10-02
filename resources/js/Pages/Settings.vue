@@ -8,15 +8,9 @@
         <div class="flex justify-between mb-3">
             <h1 class="text-3xl">Settings</h1>
         </div>
-
-        <p>Hi settings</p>
+        
+        <div class="d-flex justify-content-center">
+            <p>Settings page goes here!</p>
+        </div>
     </section>
 </template>
-
-<script setup>
-
-</script>
-
-<style scoped>
-
-</style>
