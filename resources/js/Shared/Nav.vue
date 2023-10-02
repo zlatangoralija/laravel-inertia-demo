@@ -10,15 +10,11 @@
 </template>
 
 <script>
-import NavLink from "../shared/NavLink.vue";
+    import NavLink from "../shared/NavLink.vue";
 
-export default {
-    components: {
-        NavLink,
+    export default {
+        components: {
+            NavLink,
+        }
     }
-}
 </script>
-
-<style scoped>
-
-</style>

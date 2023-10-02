@@ -65,5 +65,3 @@ Route::middleware('auth')->group(function(){
         return Inertia::render('Settings');
     });
 });
-
-//Resume: Episode 19 - 2:08, validation messages

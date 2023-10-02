@@ -17,21 +17,17 @@
 </template>
 
 <script>
-import Nav from "./Nav.vue";
+    import Nav from "./Nav.vue";
 
-export default {
-    components: {
-        Nav,
-    },
+    export default {
+        components: {
+            Nav,
+        },
 
-    computed: {
-        username(){
-            return this.$page.props.auth.user.username;
+        computed: {
+            username(){
+                return this.$page.props.auth.user.username;
+            }
         }
     }
-}
 </script>
-
-<style scoped>
-
-</style>
