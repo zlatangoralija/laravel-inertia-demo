@@ -8,19 +8,15 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/vue3'
+    import { Link } from '@inertiajs/vue3'
 
-export default {
-    props: {
-        active: Boolean,
-    },
+    export default {
+        props: {
+            active: Boolean,
+        },
 
-    components: {
-        Link,
+        components: {
+            Link,
+        }
     }
-}
 </script>
-
-<style scoped>
-
-</style>

@@ -9,7 +9,6 @@ createInertiaApp({
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
 
         let page = pages[`./Pages/${name}.vue`]
-        console.log(page.default.layout);
         if(page.default.layout === undefined){
             page.default.layout  = Layout
         }
@@ -25,7 +24,7 @@ createInertiaApp({
             .mount(el)
     },
 
-    title: title => `Interia demo - ${title}`,
+    title: title => `Interia app demo | ${title}`,
 });
 
 InertiaProgress.init({
