@@ -12,11 +12,3 @@
         <p>Hi home</p>
     </section>
 </template>
-
-<script setup>
-
-</script>
-
-<style scoped>
-
-</style>
